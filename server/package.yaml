@@ -19,8 +19,16 @@ extra-source-files:
 # common to point users to the README.md file.
 description:         Please see the README on GitHub at <https://github.com/clitetailor/t-graph-server#readme>
 
+default-extensions:
+- OverloadedStrings
+- DeriveGeneric
+
 dependencies:
 - base >= 4.7 && < 5
+- text
+- mtl
+- Spock
+- aeson
 
 library:
   source-dirs: src
@@ -28,7 +36,7 @@ library:
 executables:
   t-graph-server-exe:
     main:                Main.hs
-    source-dirs:         app
+    source-dirs:         src
     ghc-options:
     - -threaded
     - -rtsopts

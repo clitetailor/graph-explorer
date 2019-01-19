@@ -17,5 +17,9 @@
     "dev": "run-p start:dev autobuild",
     "start": "sirv public",
     "start:dev": "sirv public --dev"
+  },
+  "dependencies": {
+    "axios": "^0.18.0",
+    "rxjs": "^6.3.3"
   }
 }
