@@ -1,14 +1,14 @@
-name:                t-graph-server
-version:             0.1.0.0
-github:              "clitetailor/t-graph-server"
-license:             BSD3
-author:              "Clite Tailor"
-maintainer:          "ducnhatphung@gmail.com"
-copyright:           "Copyright (c) 2019 Clite Tailor"
+name: graph-explorer-server
+version: 0.1.0.0
+github: "clitetailor/graph-explorer-server"
+license: BSD3
+author: "Clite Tailor"
+maintainer: "ducnhatphung@gmail.com"
+copyright: "Copyright (c) 2019 Clite Tailor"
 
 extra-source-files:
-- README.md
-- ChangeLog.md
+  - README.md
+  - ChangeLog.md
 
 # Metadata used when publishing your package
 # synopsis:            Short description of your package
@@ -17,32 +17,41 @@ extra-source-files:
 # To avoid duplicated efforts in documentation and dealing with the
 # complications of embedding Haddock markup inside cabal files, it is
 # common to point users to the README.md file.
-description:         Please see the README on GitHub at <https://github.com/clitetailor/t-graph-server#readme>
+description: Please see the README on GitHub at <https://github.com/clitetailor/graph-explorer-server#readme>
+
+default-extensions:
+  - DeriveGeneric
+  - OverloadedStrings
 
 dependencies:
-- base >= 4.7 && < 5
+  - base >= 4.7 && < 5
+  - aeson
+  - Spock
+  - Spock-core
+  - reroute
+  - text
 
 library:
   source-dirs: src
 
 executables:
-  t-graph-server-exe:
-    main:                Main.hs
-    source-dirs:         app
+  graph-explorer-server-exe:
+    main: Main.hs
+    source-dirs: app
     ghc-options:
-    - -threaded
-    - -rtsopts
-    - -with-rtsopts=-N
+      - -threaded
+      - -rtsopts
+      - -with-rtsopts=-N
     dependencies:
-    - t-graph-server
+      - graph-explorer-server
 
 tests:
-  t-graph-server-test:
-    main:                Spec.hs
-    source-dirs:         test
+  graph-explorer-server-test:
+    main: Spec.hs
+    source-dirs: test
     ghc-options:
-    - -threaded
-    - -rtsopts
-    - -with-rtsopts=-N
+      - -threaded
+      - -rtsopts
+      - -with-rtsopts=-N
     dependencies:
-    - t-graph-server
+      - graph-explorer-server
